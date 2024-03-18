@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Profile information</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		  <link rel="shortcut icon" type="image/png" href="{% static 'images/unnamed.jpg' %}"/ sizes="16*16">
+	
+		  <style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				 max-height: 100vh;
+     			 background-color: #112233;
+				 background-position: fixed;
+				}
+				
+	h1
+	{
+		color: white;
+		padding-top: 10px;
+	 	padding-left: 200px;
+		
+		padding-bottom: 10px;
+		box-sizing: border-box;
+		margin-left: 50px;
+		margin-top:-26px;
+		border-bottom: 5px solid black;
+		border-image: none;
+		font-size: 30px;
+		margin-right: 70px;
+		border-right: 16px solid green;
+		border-bottom-color:orange;
+		margin-right: 70px;
+		border-bottom-width: 10px;
+	}
+	.main{
+		margin: 10px 100px;
+		padding: 10px;
+	}
+	.card-header{
+		color: pink;
+		font-size: 30px;
+		padding: 20px;
+	}
+	
+	table {
+		
+		padding: 30px 50px;
+		width: 60%;
+		height: 50%;
+		background-color: none;
+		color: white;
+	}
+	table tr{
+		color: rgba(209, 173, 12, 0.801);
+		font-style: italic;
+		font-size: 16px;
+		font-weight: bold;
+		justify-content: center;
+		align-items: center;
+	}
+	table tr:nth-child(even){
+		background-color:black;
+	}
+	table tr th{
+		color: green;
+		font-weight: bold;
+		font-size: 16px;
+		
+	}
+	.container{
+		border-top: 2px solid gray;
+		padding: 20px;
+		margin: 10px;
+		color: white;
+		font-style: italic;
+		display: flex;
+
+	}
+	.redirect{
+		padding: 10px;
+		border-radius: 10px;
+		margin-left: 190px;
+		background-color: black;
+		color: white;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	p{
+		color: orange;
+		font-weight: bold;
+	}
+	span{
+		color: red;
+		font-size: 20px;
+		font-weight: bold;
+		font-style: oblique;
+		border: 1px solid white;
+		background-color: black;
+	}
+	img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: -50px;
+  }
+  h5{
+	color: black;
+	font-size: 17px;
+	font-style: italic;
+  }
+  footer{
+    text-align: center;
+    margin-top: 40px;
+  }
+  h3{
+	color: blue;
+	font-size: 16px;
+	font-style:italic;
+  }
+  
+		  </style>
+</head>
+<body>
+	
+	<a class="neon-btn" href="{% url 'index' %}">
+		<img src='{% static "images/unnamed.jpg" class="rounded" alt="Cinque Terre"  %}'
+	width="50" height="50"> </a>
+	
+
+	<h1>
+		Kandula Sivananda Reddy Memorial College of Engineering, <br> ( AUTONOMOUS ), Kadapa
+	</h1>
+	<h3><marquee behavior="hr" direction="right">KSRM College Official Website: https://www.ksrmce.ac.in/ please visit this website for more information.</marquee></h3>
+
+ <div class="main">
+	
+		<div class="card-header">
+			<h4><SPAn> {{ data.name}} </SPAn>   Information Table</h4>
+		</div>
+		<div class="card-body">
+			<table border="4" class="table">
+				<tr><th >Id</th><td>{{ data.id }}</td></tr>
+				<tr><th>Full Name</th><td>{{ data.name}}</td></tr>
+				<tr><th>Roll No</th><td>{{ data.rollno }}</td></tr>
+				<tr><th>Subject</th><td>{{ data.subject }}</td></tr>
+				<tr><th>No_of_copies</th><td>{{ data.no_of_copies }}</td></tr>
+				<tr><th>Branch</th><td>{{ data.branch }}</td></tr>
+			</table>
+			<div class="container">
+				<p>I Mr.<span> {{ data.name }} </span> ,This is My Roll Number :<span> {{ data.rollno }} </span>. I am from <span> {{ data.branch }} </span> branch. Could you please give me <span> {{ data.subject }}</span> Subject xeroxes. Probably i need  <span>{{ data.no_of_copies }} </span> Copies. </p>
+  			
+	   			<a class="two" href="{% url 'display' %}">
+					<button class="redirect">back</button>
+	  			</a>
+			</div>
+		</div>
+</div>
+<footer>
+	<div class="time">
+	  <h3 id="demo1">Time: </h4>
+	  <h5>
+		© 2016 KSRM COLLEGE OF ENGINEERING. All Rights Reserved.</h5>
+	  </div>
+	@ksrce.ac.in
+  </footer>
+  <script>
+	var d= new Date();     
+  
+	document.getElementById('demo1').innerHTML=d;
+  </script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Student Records</title>
+	<link rel="shortcut icon" type="image/png" href="{% static 'images/unnamed.jpg' %}"/ sizes="16*16">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="C:\Users\basha\Desktop\HTML\Bussiness_Website\Browse_Icon.png">
+	<style>
+
+	body
+	{
+      background-color: #112233;
+	 }
+
+	h1
+	{
+		color: white;
+		padding-top: 10px;
+	 	padding-left: 200px;
+		padding-bottom: 10px;
+		box-sizing: border-box;
+		margin-left: 50px;
+		margin-top:-15px;
+		border-top: 5px solid none;
+		border-left: 10px solid none;
+		border-right:8px solid black ;
+		border-image: none;
+		border-bottom: 3px solid greenyellow;
+		margin-right: 70px;
+		font-size: 25px;
+
+
+	}
+	h2{
+		color:yellow;
+		font-style: italic;
+		padding: 20px 20px;
+		border-bottom: 2px solid rgba(160, 137, 10, 0.507);
+		border-left: 10px solid white;
+		font-size: 20px;
+
+	}
+
+	table {
+		
+		padding: 20px;
+		margin-right: 20px;
+		margin-left: 110px;
+		margin-top: 20px;
+		width: 80%;
+		height: 100%;
+		border-radius: 10px;
+	
+		
+	}
+	table tr{
+		color: rgba(209, 173, 12, 0.801);
+		font-style: italic;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 0px;
+		
+		border-radius: 20px;
+
+	}
+	
+	table tr th{
+		color: white;
+		font-weight: bold;
+		font-size: 15px;
+		
+	}
+
+	
+	.btn {
+		color: green;
+		font-size: 23px;
+	}
+	.btn:hover{
+		font-size: 23px;
+		color: green;
+	}
+	.btn2 {
+		color: rgba(217, 22, 235, 0.562);
+		font-size:20px;
+	}
+	.btn2:hover{
+		font-size: 23px;
+	}
+	.btn3 {
+		color: RED;
+		font-size:20px;
+	}
+	.btn3:hover{
+		font-size: 23px;
+	}
+
+	
+	.redirect1{
+		padding: 10px;
+		border-radius: 10px;
+		margin-left: 100px;
+		background-color: green;
+		color: white;
+		font-weight: bold;
+		cursor: pointer;
+		text-decoration: none;
+	}
+	.redirect1:hover{
+		background-color: black;
+		color: white;
+		text-decoration: none;
+	}
+	.redirect2{
+		padding: 10px;
+		border-radius: 10px;
+		margin-left: 100px;
+		background-color: orange;
+		color: white;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	.redirect2:hover{
+		background-color: black;
+		color: white;
+		text-decoration: none;
+	}
+	.redirect3{
+		padding: 10px;
+		border-radius: 10px;
+		margin-left: 100px;
+		background-color: red;
+		color: white;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	.redirect3:hover{
+		background-color: black;
+		color: white;
+		text-decoration: none;
+	}
+	.redirect{
+		padding: 10px;
+		border-radius: 10px;
+		margin-left: 100px;
+		background-color: black;
+		color: white;
+		font-weight: bold;
+		cursor: pointer;
+		border-right: none;	
+	}
+	.redirect:hover{
+		background-color: black;
+		color: white;
+		text-decoration: none;
+	}
+	h3{
+		color: blue;
+		font-size: 15px;
+	}
+	.neon-btn{
+            text-decoration: none;
+            position: relative;
+            padding: 10px 40px;
+            overflow: hidden;
+            transition: 0.3s all;
+            color: white;
+            text-transform: uppercase;
+			margin-left: 20px;
+			margin-top: 30px;
+
+        }
+        .neon-btn span{
+            position: absolute;
+            display: block;
+
+
+        }
+        .neon-btn:hover{
+            background-color: black;
+            box-shadow: 0px 0px 60px 5px gold;
+            transition-delay: 0.4s;
+            color: white;
+            font-weight: bold;
+
+        }
+        .neon-btn span:nth-child(1){
+            top:0 ;
+            left:-91%;
+            width: 100%;
+            height: 2px;
+            background-color: gold;
+        }
+        .neon-btn:hover span:nth-child(1){
+            left: 0;
+            transition: 0.4s;
+        }
+
+        .neon-btn span:nth-child(2){
+            bottom: -20%;
+            right: 0;
+            width: 2px;
+            font-weight: 100;
+            background-color: gold;
+            height: 100%;
+        }
+        .neon-btn:hover span:nth-child(2){
+            bottom: 0;
+            transition: 0.4s;
+        }
+        .neon-btn span:nth-child(3){
+            bottom: 0px;
+            right: -20%;
+            width: 80%;
+            height: 2px;
+            background-color: gold;
+			margin-right: 21px;
+        }
+
+        .neon-btn:hover span:nth-child(3){
+         right: 0;
+         transition: 0.4s;
+        }
+        .neon-btn span:nth-child(4){
+            top: -70%;
+            left: 0%;
+            width: 2px;
+            font-weight: 100;
+            background-color: gold;
+            height: 100%;
+        }
+        .neon-btn:hover span:nth-child(4){
+         top: 0%;
+         transition: 0.4s;
+        }
+		
+		img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: -50px;
+  }
+  footer{
+    text-align: center;
+    margin-top: 40px;
+	color: black;
+  }
+  h3{
+	color: black;
+	font-size: 18px;
+	font-style: italic;
+	
+  }
+  h4{
+	color: blue;
+	font-style: italic;
+	font-size: 15px;
+  }
+  
+  
+
+
+	</style>
+</head>
+<body>
+	<a href="{% url 'index' %}">
+	<img src='{% static "images/unnamed.jpg" class="rounded" alt="Cinque Terre"  %}'
+width="50" height="50"> </a>
+	<h1>
+		Kandula Sivananda Reddy Memorial College of Engineering <br> ( AUTONOMOUS ), Kadapa
+	</h1>
+	<h4><marquee behavior="hr" direction="right">KSRM College Official Website: https://www.ksrmce.ac.in/ please visit this website for more information.</marquee></h4>
+	<div class="header">
+		<h2>Copies_Enrollement_List</h2>
+		
+
+		<a class="neon-btn" href="{% url 'index' %}">
+			<span></span>
+			<span></span>
+			<span></span>
+			back
+		  </a>
+	</div>
+
+<div class="table">
+ <table border="2" id="mytable">
+ 	<tr>
+ 	 	<th>Name</th>
+ 		<th>Rollno</th>
+ 		<th >View</th>
+ 		<th>Update</th>
+ 		<th>Delete</th>
+ 	</tr>
+ 	{% for i in data %}
+ 	<tr>
+ 		<td>{{ i.name }}</td>
+ 		<td>{{ i.rollno }}</td>
+ 		<td><a href="{% url 'view' i.id %}"  class="redirect1" >Show</a></td>
+		<td><a href="{% url 'update' i.id %}" class="redirect2">Update</a></td>
+		<td><a href="{% url 'delete' i.id %}" class="redirect3">Delete</a></td>
+ 		
+ 	</tr>
+ 	{% endfor %}
+ 	
+
+ </table>
+</div>
+<footer>
+	<div class="time">
+	  <h3 id="demo1">Time: </h3>
+	  </div>
+	<h3>
+		© 2016 KSRM COLLEGE OF ENGINEERING. All Rights Reserved.</h3>
+  </footer>
+  <script>
+	var d= new Date();     
+  
+	document.getElementById('demo1').innerHTML=d;
+  </script>
+</body>
+</html>

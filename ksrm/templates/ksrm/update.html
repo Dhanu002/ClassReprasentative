@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Update</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	
+		  <style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+		
+		max-height: 100vh;
+		background: #112233;
+		background-position: fixed;
+		
+		
+			}	
+			
+	h1
+	{
+		color: white;
+		padding-top: 10px;
+	 	padding-left: 200px;
+		border: 3px solid black;
+		padding-bottom: 10px;
+		box-sizing: border-box;
+		margin-left: 50px;
+		margin-top:30px;
+		border-top: 2px solid white;
+		border-left: 5px solid yellowgreen;
+		border-image: none;
+		border-bottom: 2px solid black;
+		margin-right: 70px;
+		font-size: 30px;
+
+
+	}
+	form {
+		color:rgba(8, 226, 26, 0.781);
+		border: 2px solid white;
+		padding: 30px;
+		border-top-left-radius: 40px;
+		border-bottom-left-radius: 20px;
+		border-right-color: saddlebrown;
+		border-right-width: 10px;
+		font-weight: bold;
+	}
+	form input{
+		padding-left: 30px;
+		color: red;
+		font-weight: bold;
+		display: flex;
+		margin-left: 20px;
+	}
+	.card-body{
+		margin: 20px;
+		padding: 30px 100px;
+	}
+	table{
+		margin-left: 40px;
+	}
+	.card{
+		margin-left: 100px;
+		margin-top: 30px;
+		background-color: #112233;
+		color: white;
+	}
+	.cancel{
+		margin: 20px;
+		border-radius: 10px;
+	}
+	img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: -50px;
+  }
+  footer{
+    text-align: center;
+    margin-top: 40px;
+  }
+  h3{
+	color: black;
+	font-style: italic;
+	font-size: 15px;
+
+  }
+  h4{
+	color: black;
+	font-size: 15px;
+  }
+  
+		  </style>
+</head>
+<body>
+
+	<h1>
+		Kandula Sivananda Reddy Memorial College of Engineering
+	</h1>
+	
+	<div class="col-sm-6">
+	<div class="card">
+		<div class="card-header bg-danger">
+			<h4>Student Information </h4>
+		</div>
+		<div class="card-body">
+			<table border="1" class="table table-success">
+<form method="POST" action="">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit" class="btn btn-success">Update</button>
+	<button class="cancel"> 
+	<a href="{% url 'display'  %}" class="btn btn-primary">cancel </a></button>
+</form>
+</table>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="time">
+	  <h3 id="demo1" style="color: orange">Time: </h3>
+	  <h4>
+		© 2016 KSRM COLLEGE OF ENGINEERING. All Rights Reserved.</h4>
+	  </div>
+	@ksrce.ac.in
+  </footer>
+  <script>
+	var d= new Date();     
+  
+	document.getElementById('demo1').innerHTML=d;
+  </script>
+</body>
+</html>

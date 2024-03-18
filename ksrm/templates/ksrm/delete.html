@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>delete</title>
+	<link rel="shortcut icon" type="image/png" href="{% static 'images/unnamed.jpg' %}"/ sizes="16*16">
+	
+		
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+		<style>
+			*{
+		margin: 0;
+		padding: 0;
+		font-family: sans-serif,'Poppins';
+
+	}
+	body{
+		
+	max-height: 100vh;
+	background: #112233;
+	background-position: fixed;
+	
+	
+	}
+	
+	h1
+	{
+		color: white;
+		padding-top: 10px;
+	 	padding-left: 200px;
+		padding-bottom: 10px;
+		box-sizing: border-box;
+		margin-left: 50px;
+		margin-top:10px;
+		
+		border-image: none;
+		border-bottom: 2px solid white;
+		margin-right: 70px;
+		font-size: 30px;
+
+
+	}
+	h2{
+		color: black;
+		font-weight: bold;
+		font-style: italic;
+		padding: 40px;
+		margin: 20px;
+	}
+	.actions{
+		padding: 20px;
+		margin: 40px;
+	}
+	.card{
+		margin-left: 200px;
+		margin-top: 100px;
+		background-color: #112233;
+		color: white;
+		border: 2px solid peru;
+		margin-right: 200px;
+		border-radius: 40px;
+		border-left: none;
+		border-right: none;
+	}
+	span{
+		color: red;
+		font-size: 27px;
+		font-weight: bold;
+		font-style: oblique;
+		border: 1px solid white;
+		background-color: black;
+	}
+	.btn1{
+		padding: 10px;
+		border-radius: 20px;
+		float: right;
+		background-color: green;
+
+	}
+	.btn1:hover{
+		cursor: pointer;
+		background-color: green;
+
+	}
+	img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: -50px;
+  }
+  h3{
+	color: blue;
+	font-size: 16px;
+	font-style: italic;
+  }
+  footer{
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+	
+		</style>
+</head>
+<body>
+	<a href="{% url 'index' %}">
+		<img src='{% static "images/unnamed.jpg" class="rounded" alt="Cinque Terre"  %}'
+	width="50" height="50"> </a>
+	<h1>
+		Kandula Sivananda Reddy Memorial College of Engineering, <br> ( AUTONOMOUS ), Kadapa
+	</h1>
+	<h3><marquee behavior="hr" direction="right">KSRM College Official Website: https://www.ksrmce.ac.in/ please visit this website for more information.</marquee></h3>
+
+	<div class="card">
+	<form action="{% url 'delete' data.id %}" method="POST">
+		{%csrf_token %}
+		<h2>Are You sure to delete <span>{{ data.name }} </span>  Student record from the list. </h2>
+		<div class="actions">
+
+
+			<a href="{% url 'display'  %}" class="btn btn-primary">cancel </a>
+			<button type="submit" class="btn1 btn-success" >Conform </button>
+	    </div>
+	</div>
+	<footer>
+		<div class="time">
+		  <h3 id="demo1" style="color: orange">Time: </h3>
+		  </div>
+		@ksrce.ac.in
+	  </footer>
+	  <script>
+		var d= new Date();     
+	  
+		document.getElementById('demo1').innerHTML=d;
+	  </script>
+</body>
+</html>
